@@ -17,6 +17,10 @@ export const metadata = {
   description: "A cozy online bookstore with great recommendations",
 };
 
+<head>
+  <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
+</head>
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
