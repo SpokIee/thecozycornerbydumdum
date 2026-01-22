@@ -3,42 +3,51 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50">
-      <main className="flex w-full max-w-3xl flex-col items-center gap-10 py-24 px-10 bg-white rounded-lg shadow">
-        <Image
-          src="/images/book1.png"
-          alt="The Cozy Corner"
-          width={120}
-          height={160}
-          priority
-        />
+    <div className="flex items-center justify-center py-16">
+      <div className="bg-white rounded-2xl shadow-xl p-12 max-w-5xl w-full mx-4">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Book Image */}
+          <div className="flex justify-center">
+            <Image
+              src="/images/book1.png"
+              alt="The Cozy Corner Featured Book"
+              width={240}
+              height={320}
+              priority
+              className="rounded-lg shadow-lg"
+            />
+          </div>
 
-        <div className="text-center">
-          <h1 className="text-3xl font-semibold tracking-tight">
-            Welcome to The Cozy Corner
-          </h1>
-          <p className="mt-4 text-zinc-600">
-            A cozy online bookstore with hand-picked recommendations for every
-            reader.
-          </p>
+          {/* Right Side - Content */}
+          <div className="text-center md:text-left space-y-6">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+                Welcome to <br />
+                The Cozy Corner
+              </h1>
+              <p className="mt-4 text-lg text-zinc-600 leading-relaxed">
+                A cozy online bookstore with hand-picked recommendations for every reader.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link
+                href="/books"
+                className="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-zinc-800 transition-all shadow-lg"
+              >
+                Browse Books
+              </Link>
+
+              <Link
+                href="/about"
+                className="px-8 py-4 bg-white text-black font-semibold rounded-full border-2 border-black hover:bg-zinc-50 transition-all"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
         </div>
-
-        <div className="flex gap-4">
-          <Link
-            href="/books"
-            className="flex h-12 items-center justify-center rounded-full bg-black px-6 text-white hover:bg-zinc-800"
-          >
-            Browse Books
-          </Link>
-
-          <Link
-            href="/about"
-            className="flex h-12 items-center justify-center rounded-full border px-6 hover:bg-zinc-100"
-          >
-            Learn More
-          </Link>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
